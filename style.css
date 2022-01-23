@@ -2,6 +2,17 @@
   --clr-primary: hsl(0 36% 70%);
   --clr-secondary: hsl(0 93% 68%);
   --clr-neutral: hsl(0 6% 24%);
+
+  --clr-gradient-primary: linear-gradient(
+    135deg,
+    hsl(0 80% 86%),
+    hsl(0 74% 74%)
+  );
+  --clr-gradient-secondary: linear-gradient(
+    135deg,
+    hsl(0 0% 100%),
+    hsl(0 100% 98%)
+  );
 }
 
 * {
@@ -15,4 +26,89 @@ body {
   font-family: "Josefin Sans", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 300;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.hero {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "hero image";
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.container {
+  max-width: 25.25rem;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-top: 4rem;
+}
+
+.hero-title {
+  margin-top: 10rem;
+  grid-area: hero;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--clr-neutral);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+.hero-title span {
+  font-weight: 300;
+  color: var(--clr-primary);
+}
+
+.hero-description {
+  margin-top: 1rem;
+  color: var(--clr-primary);
+  line-height: 1.75em;
+}
+
+.hero-img {
+  height: 100vh;
+  background-image: url("images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-area: image;
+}
+
+.email-input {
+  padding-left: 1.75em;
+  height: 56px;
+  width: 29.1em;
+  margin-top: 2rem;
+  border: 1px solid var(--clr-primary);
+  border-radius: 50px;
+  color: var(--clr-primary);
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--clr-secondary);
+}
+
+.btn {
+  width: 100px;
+  height: 56px;
+  margin-left: -6rem;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50px;
+  background: var(--clr-gradient-primary);
+  transition: background 1s;
+}
+
+.btn:hover {
+  background: var(--clr-gradient-secondary);
 }
